@@ -5,11 +5,11 @@ import 'presentation/screens/chief/chief_dashboard.dart';
 import 'presentation/screens/admin/admin_dashboard.dart';
 
 void main() {
-  runApp(const EmployeeApp());
+  runApp(const CompanyConnectApp());
 }
 
-class EmployeeApp extends StatelessWidget {
-  const EmployeeApp({super.key});
+class CompanyConnectApp extends StatelessWidget {
+  const CompanyConnectApp({super.key});
 
   @override
   Widget build(BuildContext context) {
