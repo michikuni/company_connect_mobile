@@ -1,24 +1,16 @@
-class ContractModel {
-  final String typeContract;
-  final String startDate;
-  final String? endDate;
-  final double? contractExpire;
-  final String? probationStartDate;
-  final String? probationEndDate;
-  final String taxCode;
-  final String? socialInsuranceNumber;
-  final String? healthInsuranceNumber;
+import 'package:mp_corporation_app/domain/entities/employee/contract.dart';
 
+class ContractModel extends ContractEntity {
   const ContractModel({
-    required this.typeContract,
-    required this.startDate,
-    this.endDate,
-    this.contractExpire,
-    this.probationStartDate,
-    this.probationEndDate,
-    required this.taxCode,
-    this.socialInsuranceNumber,
-    this.healthInsuranceNumber,
+    required super.typeContract,
+    required super.startDate,
+    super.endDate,
+    super.contractExpire,
+    super.probationStartDate,
+    super.probationEndDate,
+    required super.taxCode,
+    super.socialInsuranceNumber,
+    super.healthInsuranceNumber,
   });
 
   factory ContractModel.fromJson(Map<String, dynamic> json) {

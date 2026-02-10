@@ -1,52 +1,59 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mp_corporation_app/presentation/bloc/employee/employee_bloc.dart';
+import 'package:mp_corporation_app/presentation/bloc/employee/employee_state.dart';
 
 class EmployeeDashboard extends StatelessWidget {
   const EmployeeDashboard({super.key});
+
 
   static const routeName = '/employee';
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Employee dashboard'),
-      ),
-      body: ListView(
-        padding: const EdgeInsets.all(16),
-        children: [
-          _SectionCard(
-            title: 'Profile',
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                _InfoRow(label: 'Name', value: 'John Doe'),
-                _InfoRow(label: 'Role', value: 'Employee'),
-                _InfoRow(label: 'Department', value: 'Engineering'),
-              ],
+    return BlocBuilder<EmployeeBloc, EmployeeState>(
+      builder: (context, state) => Scaffold(
+        appBar: AppBar(
+          title: const Text('Employee dashboard'),
+        ),
+        body: ListView(
+          padding: const EdgeInsets.all(16),
+          children: [
+            _SectionCard(
+              title: 'Profile',
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  _InfoRow(label: 'ID', value: state.employee?.employeeId ?? ''),
+                  _InfoRow(label: 'Name', value: state.employee?.profile.name ?? ''),
+                  _InfoRow(label: 'Role', value: state.employee?.position ?? ''),
+                  _InfoRow(label: 'Department', value: state.employee?.department ?? ''),
+                ],
+              ),
             ),
-          ),
-          _SectionCard(
-            title: 'Contract',
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                _InfoRow(label: 'Salary (monthly)', value: '\$3,000'),
-                _InfoRow(label: 'Benefits', value: 'Health, Lunch, Transport'),
-                _InfoRow(label: 'Contract expires', value: '2026-12-31'),
-              ],
+            _SectionCard(
+              title: 'Contract',
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  _InfoRow(label: 'Salary (monthly)', value: state.employee?.payroll.income.toString() ?? '0.0'),
+                  _InfoRow(label: 'Benefits', value: 'Health, Lunch, Transport'),
+                  _InfoRow(label: 'Contract expires', value: '${state.employee?.contract.contractExpire} month'),
+                ],
+              ),
             ),
-          ),
-          _SectionCard(
-            title: 'Attendance (this month)',
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                _InfoRow(label: 'Days worked', value: '18'),
-                _InfoRow(label: 'Absent', value: '2'),
-              ],
+            _SectionCard(
+              title: 'Attendance (this month)',
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  _InfoRow(label: 'Days worked', value: '18'),
+                  _InfoRow(label: 'Absent', value: '2'),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

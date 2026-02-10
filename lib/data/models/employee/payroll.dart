@@ -1,30 +1,19 @@
-class PayrollModel {
-  final String salaryType;
-  final double baseSalary;
-  final double? allowance;
-  final double? bonus;
-  final double? overtimeRate;
-  final double income;
-  final String currency;
-  final String payday;
-  final String bankAccountNumber;
-  final String bankAccountName;
-  final String bankName;
-  final String bankBranch;
+import 'package:mp_corporation_app/domain/entities/employee/payroll.dart';
 
+class PayrollModel extends PayrollEntity{
   const PayrollModel({
-    required this.salaryType,
-    required this.baseSalary,
-    this.allowance,
-    this.bonus,
-    this.overtimeRate,
-    required this.income,
-    required this.currency,
-    required this.payday,
-    required this.bankAccountNumber,
-    required this.bankAccountName,
-    required this.bankName,
-    required this.bankBranch,
+    required super.salaryType,
+    required super.baseSalary,
+    super.allowance,
+    super.bonus,
+    super.overtimeRate,
+    required super.income,
+    required super.currency,
+    required super.payday,
+    required super.bankAccountNumber,
+    required super.bankAccountName,
+    required super.bankName,
+    required super.bankBranch,
   });
 
   factory PayrollModel.fromJson(Map<String, dynamic> json) {

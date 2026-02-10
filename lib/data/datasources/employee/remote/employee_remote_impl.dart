@@ -1,26 +1,21 @@
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
+import 'package:injectable/injectable.dart';
 import 'package:mp_corporation_app/core/constants/api_endpoint.dart';
 import 'package:mp_corporation_app/data/datasources/employee/remote/employee_remote.dart';
 import 'package:mp_corporation_app/data/models/employee/employee.dart';
 
+@LazySingleton(as: IEmployeeRemote)
 class EmployeeRemoteImpl implements IEmployeeRemote {
   final Dio dio;
   EmployeeRemoteImpl(this.dio);
   @override
-  Future<List<EmployeeModel>> getAllEmployee() async {
+  Future<EmployeeModel> getEmployee() async {
     try {
       final response = await dio.get(ApiEndpoint.employeeEP);
-      final List data = response.data;
-      return data.map((e) {
-        try {
-          return EmployeeModel.fromJson(e);
-        } catch (e) {
-          log(e.toString());
-          rethrow;
-        }
-      }).toList();
+      log(EmployeeModel.fromJson(response.data).profile.name);
+      return EmployeeModel.fromJson(response.data);
     } catch (e) {
       log(e.toString());
       rethrow;
