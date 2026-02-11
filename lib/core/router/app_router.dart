@@ -8,13 +8,14 @@ import 'package:mp_corporation_app/presentation/bloc/employee/employee_event.dar
 import 'package:mp_corporation_app/presentation/screens/admin/admin_dashboard.dart';
 import 'package:mp_corporation_app/presentation/screens/chief/chief_dashboard.dart';
 import 'package:mp_corporation_app/presentation/screens/employee/employee_dashboard.dart';
+import 'package:mp_corporation_app/presentation/screens/enter_code_verify/enter_code_verify.dart';
 import 'package:mp_corporation_app/presentation/screens/forgot_password/forgot_password.dart';
 import 'package:mp_corporation_app/presentation/screens/manager/manager_dashboard.dart';
 import 'package:mp_corporation_app/presentation/screens/signin/signin.dart';
 
 class AppRouter {
   static final GoRouter appRouter = GoRouter(
-    initialLocation: RouterPath.forgotPasswordRouterPath,
+    initialLocation: RouterPath.verifyCodeRouterPath,
     routes: [
       GoRoute(
         path: RouterPath.employeeRouterPath,
@@ -44,6 +45,10 @@ class AppRouter {
       GoRoute(
         path: RouterPath.forgotPasswordRouterPath,
         builder: (context, state) => const ForgotPasswordScreen(),
+      ),
+      GoRoute(
+        path: RouterPath.verifyCodeRouterPath,
+        builder: (context, state) => const EnterCodeVerifyScreen(),
       ),
     ],
   );
