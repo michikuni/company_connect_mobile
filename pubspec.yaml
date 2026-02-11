@@ -17,6 +17,7 @@ dependencies:
   go_router: ^17.1.0
   fpdart: ^1.2.0
   formz: ^0.8.0
+  google_fonts: ^8.0.1
 
 dev_dependencies:
   flutter_test:
