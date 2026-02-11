@@ -13,6 +13,7 @@ class CustomColorTheme {
     onSurface: Color(0xFF1E293B),
     secondaryFixedDim: Color(0xFF94A3B8),
     outline: Color(0xFFE2E8F0),
-    onSurfaceVariant: Color(0xFF3C9AFB)
+    onSurfaceVariant: Color(0xFF3C9AFB),
+    surfaceDim: Color(0xFFF1F5F9)
   );
 }

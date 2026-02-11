@@ -8,12 +8,13 @@ import 'package:mp_corporation_app/presentation/bloc/employee/employee_event.dar
 import 'package:mp_corporation_app/presentation/screens/admin/admin_dashboard.dart';
 import 'package:mp_corporation_app/presentation/screens/chief/chief_dashboard.dart';
 import 'package:mp_corporation_app/presentation/screens/employee/employee_dashboard.dart';
+import 'package:mp_corporation_app/presentation/screens/forgot_password/forgot_password.dart';
 import 'package:mp_corporation_app/presentation/screens/manager/manager_dashboard.dart';
 import 'package:mp_corporation_app/presentation/screens/signin/signin.dart';
 
 class AppRouter {
   static final GoRouter appRouter = GoRouter(
-    initialLocation: RouterPath.signinRouterPath,
+    initialLocation: RouterPath.forgotPasswordRouterPath,
     routes: [
       GoRoute(
         path: RouterPath.employeeRouterPath,
@@ -36,7 +37,14 @@ class AppRouter {
         path: RouterPath.managerRouterPath,
         builder: (context, state) => const ManagerDashboard(),
       ),
-      GoRoute(path: RouterPath.signinRouterPath, builder: (context, state) => const SigninScreen(),)
+      GoRoute(
+        path: RouterPath.signinRouterPath,
+        builder: (context, state) => const SigninScreen(),
+      ),
+      GoRoute(
+        path: RouterPath.forgotPasswordRouterPath,
+        builder: (context, state) => const ForgotPasswordScreen(),
+      ),
     ],
   );
 }
