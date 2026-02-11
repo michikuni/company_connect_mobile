@@ -54,6 +54,7 @@ class EnterCodeVerifyScreen extends StatelessWidget {
               ),
               SizedBox(height: 8),
               customTextInput(
+                isObscured: false,
                 borderColor: Theme.of(context).colorScheme.outline,
                 hintText: '4 Digit Code',
                 context: context,

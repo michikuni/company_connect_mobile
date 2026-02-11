@@ -38,6 +38,7 @@ class SigninScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   customTextInput(
+                    isObscured: false,
                     borderColor: Theme.of(context).colorScheme.outline,
                     hintText: 'Enter your ID',
                     context: context,
@@ -54,6 +55,7 @@ class SigninScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   customTextInput(
+                    isObscured: true,
                     borderColor: Theme.of(context).colorScheme.outline,
                     hintText: 'Enter your password',
                     context: context,
