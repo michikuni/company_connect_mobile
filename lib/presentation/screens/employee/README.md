@@ -17,7 +17,7 @@
     ## Profile
 * Name: String
 * Gender: String (Enum: Male, Female, Other)
-* Identity Type: String (Enum: citizen identity card, passport,...)
+* Identity Type: String (Enum: id card, passport, driver license)
 * Identity Number: String
 * Identity Issue Date: Date
 * Identity Issue Place: String
@@ -27,7 +27,7 @@
 * Emergency Contact Phone: String
 * Emergency Contact Relationship: String (Enum: Father, Mother, Sister, Wife,...)
 * Date Of Birth: String (convert from DateTime)
-* Health: String (Enum: Good, Bad,...)
+* Health: String (Enum: Good, Bad)
 * Married: String (Enum: Single, Married, divorced, widow,...)
 * Permanent Residence: String
 * Now Residence: String

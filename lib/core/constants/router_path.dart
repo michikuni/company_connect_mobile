@@ -7,4 +7,5 @@ class RouterPath {
   static const forgotPasswordRouterPath = '/forgot-password';
   static const verifyCodeRouterPath = '/verify-code';
   static const newPasswordRouterPath = '/new-password';
+  static const identityVerifyRouterPath = '/identity-verify';
 }

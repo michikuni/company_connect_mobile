@@ -5,6 +5,7 @@ class CustomColorTheme {
     brightness: Brightness.light,
     primary: Color(0xFF1D1D1D),
     onPrimary: Color(0xFFFFFFFF),
+    onPrimaryFixedVariant: Color(0x641D1D1D),
     secondary: Color(0xFF2B8761),
     onSecondary: Color(0xFFFFFFFF),
     error: Color(0xFFD12E34),

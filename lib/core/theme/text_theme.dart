@@ -16,8 +16,14 @@ class CustomTextTheme extends TextTheme {
         fontSize: 30,
         fontWeight: FontWeight.w700,
       ),
-      // titleMedium: ,
-      // titleSmall: ,
+      titleMedium: GoogleFonts.gabarito(
+        fontSize: 24,
+        fontWeight: FontWeight.w600,
+      ),
+      titleSmall: GoogleFonts.gabarito(
+        fontSize: 20,
+        fontWeight: FontWeight.w600,
+      ),
 
       // bodyLarge: ,
       bodyMedium: GoogleFonts.gabarito(
